@@ -15,6 +15,44 @@ body{
     display: flex;
 }
 
+#toggleColor{
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    appearance: none;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.toggleButton{
+    margin-bottom: 20px;
+}
+
+#toggleColor::before{
+    content: "";
+    background-color: #3951FF;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-left: 1.5px;
+    transition: all .4s ease-in-out;
+    box-shadow: 1px 1px 4px #928f8f;
+    margin-top: 2px;
+}
+
+#toggleColor:checked::before{
+    background-color: #FFFFFF;
+    transform: translateX(40px);
+}
+#toggleColor:checked{
+    background-color: #3951FF;
+}
+
 .card{
     width: 400px;
     height: 100vh;
@@ -22,6 +60,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .card img{
@@ -89,4 +128,11 @@ main {
     position: absolute;
     clip-path: circle(30% at right 100%);
     z-index: -1;
+}
+
+.toggle-mode{
+    background-color: #FFFFFF;
+}
+.toggle-text{
+    color: #3951FF;
 }
